@@ -1,0 +1,14 @@
+//scroll attempts 20, if you don't reach the bottom of the page increase this
+function hitbottom() {
+  var scrollToBottomWithTimeout = function(param_iterations, param_wait_time) {
+      setTimeout(function() {
+          window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+          if (param_iterations > 0) {
+              param_iterations = param_iterations - 1;
+              scrollToBottomWithTimeout(param_iterations, param_wait_time);
+          }
+      }, param_wait_time);
+  };
+  scrollToBottomWithTimeout(30, 1000);
+}
+hitbottom();
