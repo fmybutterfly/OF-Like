@@ -1,0 +1,13 @@
+function pressLikes() {
+  const inputs = document.querySelectorAll(
+      "button.b-post__tools__btn.set-favorite-btn.m-with-round-hover:not(.m-active)"
+  );
+  for (let i = 0; i < inputs.length; i++) {
+      setTimeout(function() {
+          inputs[i].click();
+          console.log("Liked");
+      }, 2500 * i);
+  }
+}
+ 
+pressLikes()
